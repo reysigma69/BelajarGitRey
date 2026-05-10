@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public playerData data;
+    public PlayerData data;
 
     public float currentHP;
     //public float speed = 5f;
