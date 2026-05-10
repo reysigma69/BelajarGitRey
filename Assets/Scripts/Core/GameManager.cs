@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -17,7 +18,18 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        ShowMainMenu(); // mengganti currentState = GameState.Playing;
+        //ShowMainMenu(); // mengganti currentState = GameState.Playing;
+        string currentScene = SceneManager.GetActiveScene().name;
+
+    if (currentScene == "MainMenu")
+    {
+        ShowMainMenu();
+    }
+    else
+    {
+        // Kalau di scene Game, langsung tancap gas
+        StartGame(); 
+    }
     }
 
     void Update()
@@ -89,5 +101,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         currentState = GameState.GameOver;
         Time.timeScale = 0f;  // timescale biar gamenya stop pas game over
+    }
+
+    public void GoToMainMenu() // lupa nambahin fungsi buat pindah tampilan ke main menu
+    {
+        Debug.Log("Back to Main Menu, gas main lagi :D"); 
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 }
