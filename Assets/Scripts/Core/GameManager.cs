@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject mainMenuPanel;
     public GameObject pausePanel;
+    public GameObject RestartPanel; // menambahkan game object restart panel
 
     void Awake()
     {
@@ -27,7 +28,6 @@ public class GameManager : MonoBehaviour
     }
     else
     {
-        // Kalau di scene Game, langsung tancap gas
         StartGame(); 
     }
     }
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     {
         currentState = GameState.Playing;
         Time.timeScale = 1f;
-        Debug.Log("Game Resumed!");
+        Debug.Log("Game Resumed!"); // indikator game dilanjutkan
         if(pausePanel)
         {
             pausePanel.SetActive(false);
@@ -101,12 +101,30 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         currentState = GameState.GameOver;
         Time.timeScale = 0f;  // timescale biar gamenya stop pas game over
+        
+        if (RestartPanel != null)
+        {
+            RestartPanel.SetActive(true);
+        }
+        
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(false);
+        }
     }
+
 
     public void GoToMainMenu() // lupa nambahin fungsi buat pindah tampilan ke main menu
     {
-        Debug.Log("Back to Main Menu, gas main lagi :D"); 
+        Debug.Log("Back to Main Menu, gas main lagi!"); 
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void RestartGame() // nambahin fungsi restart game biar bisa balik ngulang game
+{
+    Debug.Log("Restarting game...");
+    Time.timeScale = 1f;
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+}
 }

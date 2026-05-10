@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
         float h = moveInput.x;
         float v = moveInput.y;
 
-        transform.Translate(new Vector3(h, v, 0) * data.speed * Time.deltaTime);
+        float horizontal = Input.GetAxis("Horizontal");
+        transform.Translate(Vector2.right * horizontal * data.speed * Time.deltaTime);
+        // transform.Translate(new Vector3(h, v, 0) * data.speed * Time.deltaTime);
     }
 
     void OnCollisionStay2D(Collision2D collision)
