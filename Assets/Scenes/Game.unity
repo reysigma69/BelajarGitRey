@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 58927355}
   - component: {fileID: 58927354}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58927355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 960375622}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &58927355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,7 +477,7 @@ GameObject:
   - component: {fileID: 388182906}
   - component: {fileID: 388182905}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,7 +546,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 388182906}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 960375622}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &388182906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,10 +628,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1646115552}
+  - {fileID: 1868604137}
   - {fileID: 58927353}
   - {fileID: 1725576600}
-  - {fileID: 1868604137}
-  - {fileID: 1646115552}
   m_Father: {fileID: 1998347224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -773,8 +797,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 199964793}
-  - {fileID: 388182904}
   - {fileID: 1492719124}
+  - {fileID: 388182904}
   - {fileID: 1471774119}
   m_Father: {fileID: 792854805}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3776,6 +3800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 960375621}
+  - component: {fileID: 960375622}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3798,6 +3823,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &960375622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960375620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dc35567fa7e6e40a5a042d216fd24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentState: 0
+  pausePanel: {fileID: 494498422}
+  gameOverPanel: {fileID: 402913547}
 --- !u!1 &1161255973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,7 +3976,7 @@ GameObject:
   - component: {fileID: 1471774121}
   - component: {fileID: 1471774120}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4005,7 +4045,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1471774121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 960375622}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1471774121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4269,7 +4321,7 @@ GameObject:
   - component: {fileID: 1725576602}
   - component: {fileID: 1725576601}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MainMenuGameOverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4338,7 +4390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1725576602}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 960375622}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1725576602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5242,6 +5306,6 @@ SceneRoots:
   - {fileID: 1775706129}
   - {fileID: 1161255975}
   - {fileID: 1236848367}
-  - {fileID: 792854805}
   - {fileID: 960375621}
+  - {fileID: 792854805}
   - {fileID: 1998347224}
