@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //ShowMainMenu(); // mengganti currentState = GameState.Playing;
+        //ShowMainMenu(); // mengganti currentState = GameState.Playing; 
         string currentScene = SceneManager.GetActiveScene().name;
 
     if (currentScene == "MainMenu")
