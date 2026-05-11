@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public enum GameState { Playing, Paused, GameOver }
 
 public class GameManager : MonoBehaviour
 {
@@ -6,9 +9,12 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState;
 
+    public GameObject pausePanel;
+    public GameObject gameOverPanel;
+
     void Awake()
     {
-        Instance = this;
+        if (Instance == null) Instance = this;
     }
 
     void Start()
